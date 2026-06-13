@@ -19,7 +19,7 @@ class LoaderMeta(type):
 
 
 @six.add_metaclass(LoaderMeta)
-class Loader(yaml.Loader):
+class Loader(yaml.SafeLoader):
     """YAML Loader with `!include` constructor."""
 
     def __init__(self, stream, filenames_seen=None):
